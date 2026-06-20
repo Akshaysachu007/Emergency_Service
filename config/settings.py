@@ -32,7 +32,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS if host]
 
 
 # Application definition
@@ -152,3 +153,8 @@ SIMPLE_JWT = {
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://emergency-service-egfn.onrender.com"
+]
