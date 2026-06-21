@@ -15,4 +15,4 @@ COPY . .
 
 # Run migrations + collect static BEFORE starting server
 # (this fixes auth/session table issues causing login 500)
-CMD sh -c "python manage.py migrate --noinput && python manage.py collectstatic --noinput && gunicorn config.wsgi:application --bind 0.0.0.0:8000"
+CMD sh -c "python manage.py migrate --noinput && python manage.py createsuperuser --noinput || true && python manage.py collectstatic --noinput && gunicorn config.wsgi:application --bind 0.0.0.0:8000"
