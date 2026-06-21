@@ -143,7 +143,7 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "emergency-service-2phy2isu6-akshay-rs-projects-6c1538d4.vercel.app",
+    "https://emergency-service-seven.vercel.app",
 ]
 
 SIMPLE_JWT = {
